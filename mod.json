@@ -1,0 +1,12 @@
+{
+	"name": "no-gather",
+	"version": "0.26.0",
+	"label": "no-gather",
+	"description": "Resources accumulate over time, women are champions, and on random maps players start with about 50 infantry",
+	"dependencies": [
+		"0ad=0.0.26"
+	],
+	"url": "https://github.com/0ad-matters/no-gather",
+	"author_name": "Andy Alt",
+	"author_profile": "https://github.com/andy5995"
+}
