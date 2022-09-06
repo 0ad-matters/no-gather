@@ -4,11 +4,12 @@
     <Melee>
       <AttackName>Dagger</AttackName>
       <Damage>
-        <Hack>2</Hack>
+        <Hack>10</Hack>
       </Damage>
       <MaxRange>3</MaxRange>
-      <PrepareTime>500</PrepareTime>
-      <RepeatTime>1000</RepeatTime>
+      <PrepareTime>400</PrepareTime>
+      <RepeatTime>800</RepeatTime>
+      <PreferredClasses datatype="tokens">Unit+!Ship</PreferredClasses>
     </Melee>
     <Slaughter>
       <AttackName>Slaughter</AttackName>
@@ -21,9 +22,8 @@
     </Slaughter>
   </Attack>
   <Cost>
-    <BuildTime>8</BuildTime>
     <Resources>
-      <food>50</food>
+      <food op="add">20</food>
     </Resources>
   </Cost>
   <Health>
