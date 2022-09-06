@@ -5,6 +5,9 @@ on:
     tags:
       - v**
 
+env:
+    MOD_NAME: no-gather
+
 jobs:
   release:
     runs-on: ubuntu-20.04
@@ -13,7 +16,6 @@ jobs:
     - name: Build pyromod
       run: |
         MOD_VERSION="$(jq .version mod.json | tr -d \")"
-        MOD_NAME="$(jq .name mod.json | tr -d \")"
         zip -r ${HOME}/${MOD_NAME}-${MOD_VERSION}.zip . -x .git\*
         mv ${HOME}/${MOD_NAME}*.zip $PWD
         cp ${MOD_NAME}-${MOD_VERSION}.zip ${MOD_NAME}-${MOD_VERSION}.pyromod
