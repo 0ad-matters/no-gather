@@ -87,12 +87,12 @@
   </Player>
   <ResourceTrickle>
     <Rates>
-      <food>0.0</food>
-      <wood>0.0</wood>
-      <stone>0.0</stone>
-      <metal>0.0</metal>
+      <food>5.0</food>
+      <wood>5.0</wood>
+      <stone>5.0</stone>
+      <metal>5.0</metal>
     </Rates>
-    <Interval>1000</Interval>
+    <Interval>5000</Interval>
   </ResourceTrickle>
   <Sound>
     <SoundGroups>
