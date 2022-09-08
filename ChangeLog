@@ -2,6 +2,7 @@
 
   * Fix potential resource trickle OOS (thanks to Livv)
   * make town and city phase upgrades fast and free
+  * release v0.26.3
 
 2022-09-07
 
