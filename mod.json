@@ -1,6 +1,6 @@
 {
 	"name": "no-gather",
-	"version": "0.26.2",
+	"version": "0.26.2999",
 	"label": "no-gather",
 	"description": "Resources accumulate over time, women are champions, and on random maps players start with about 50 infantry",
 	"dependencies": [
