@@ -87,10 +87,10 @@
   </Player>
   <ResourceTrickle>
     <Rates>
-      <food>5.0</food>
-      <wood>5.0</wood>
-      <stone>5.0</stone>
-      <metal>5.0</metal>
+      <food>54</food>
+      <wood>54</wood>
+      <stone>54</stone>
+      <metal>54</metal>
     </Rates>
     <Interval>5000</Interval>
   </ResourceTrickle>
