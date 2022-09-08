@@ -89,8 +89,8 @@
     <Rates>
       <food>54</food>
       <wood>54</wood>
-      <stone>54</stone>
-      <metal>54</metal>
+      <stone>27</stone>
+      <metal>27</metal>
     </Rates>
     <Interval>5000</Interval>
   </ResourceTrickle>
