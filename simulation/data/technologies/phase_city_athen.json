@@ -23,7 +23,11 @@
 	"modifications": [
 		{ "value": "Capturable/GarrisonRegenRate", "add": 9, "affects": "Structure" },
 		{ "value": "ResourceGatherer/Rates/metal.ore", "multiply": 1.1, "affects": "Worker" },
-		{ "value": "TerritoryInfluence/Radius", "multiply": 1.5, "affects": "CivCentre" }
+		{ "value": "TerritoryInfluence/Radius", "multiply": 1.5, "affects": "CivCentre" },
+		{ "value": "ResourceTrickle/Rates/food", "multiply": 1.5 },
+		{ "value": "ResourceTrickle/Rates/wood", "multiply": 1.5 },
+		{ "value": "ResourceTrickle/Rates/stone", "multiply": 1.5 },
+		{ "value": "ResourceTrickle/Rates/metal", "multiply": 1.5 }
 	],
 	"soundComplete": "interface/alarm/alarm_phase.xml"
 }
