@@ -64,7 +64,4 @@
     <CanPatrol>false</CanPatrol>
     <Formations disable=""/>
   </UnitAI>
-  <Vision>
-    <Range>32</Range>
-  </Vision>
 </Entity>
