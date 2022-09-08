@@ -1,6 +1,7 @@
 2022-09-08
 
   * Fix potential resource trickle OOS (thanks to Livv)
+  * make town and city phase upgrades fast and free
 
 2022-09-07
 
