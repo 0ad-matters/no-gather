@@ -5,9 +5,9 @@
 /**
  * Returns the number of trees in forests and straggler trees.
  */
-function getTreeCounts(minTrees, maxTrees, forestRatio)
+function getTreeCounts(minTrees, maxTrees, forestRatio) // no-gather mod
 {
-	return [forestRatio, 1 - forestRatio].map(p => p * scaleByMapSize(minTrees, maxTrees));
+	return [forestRatio, 1 - forestRatio].map(p => p * scaleByMapSize(minTrees * 0.6, maxTrees * 0.6));
 }
 
 /**
@@ -60,13 +60,13 @@ function createForests(terrainSet, constraint, tileClass, treeCount, retryFactor
 	g_Map.log("Creating forests");
 	for (const forestVariant of forestVariants)
 		createAreas(
-			new ChainPlacer(1, Math.floor(scaleByMapSize(3, 5)), numberOfTrees / numberOfForests, 0.5),
+			new ChainPlacer(1, Math.floor(scaleByMapSize(3, 5)), numberOfTrees / numberOfForests * 0.2, 0.5),
 			[
 				new LayeredPainter([forestVariant.borderTerrains, forestVariant.interiorTerrains], [2]),
 				new TileClassPainter(tileClass)
 			],
 			constraint,
-			numberOfForests,
+			numberOfForests * 0.7,
 			retryFactor);
 }
 
@@ -100,7 +100,7 @@ function createStragglerTrees(templateNames, constraint, tileClass, treeCount, r
 			new SimpleGroup([new SimpleObject(templateName, 1, 1, 0, 3)], true, tileClass),
 			0,
 			constraint,
-			Math.floor(treeCount / templateNames.length),
+			Math.floor(treeCount * 0.6 / templateNames.length), // no-gather mod
 			retryFactor);
 }
 
@@ -110,6 +110,7 @@ function createStragglerTrees(templateNames, constraint, tileClass, treeCount, r
  */
 function createMines(objects, constraint, tileClass, count)
 {
+	return; // no-gather mod
 	for (let object of objects)
 		createObjectGroupsDeprecated(
 			new SimpleGroup(object, true, tileClass),
@@ -130,6 +131,8 @@ function createMines(objects, constraint, tileClass, count)
  */
 function createBalancedMines(oSmall, oLarge, clMine, constraints, counts, randomness)
 {
+	// no-gather mod
+	return;
 	let largeCount = counts.largeCount;
 	let smallCount = counts.smallCount;
 	let randomSmallCount = counts.randomSmallCount;
@@ -237,6 +240,7 @@ function createStoneMineFormation(position, templateName, terrain, radius = 2.5,
  */
 function createFood(objects, counts, constraint, tileClass)
 {
+	return; // no-gather mod
 	g_Map.log("Creating food");
 	for (let i = 0; i < objects.length; ++i)
 		createObjectGroupsDeprecated(

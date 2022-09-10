@@ -1,3 +1,7 @@
+2022-09-09
+
+  * reduce the amounts of trees, food, metal and stone on random maps
+
 2022-09-08
 
   * Fix potential resource trickle OOS (thanks to Livv)
