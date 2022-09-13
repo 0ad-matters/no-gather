@@ -8,6 +8,11 @@ function addAnimals(constraint, size, deviation, fill)
 	return;
 }
 
+function addBerries(constraint, size, deviation, fill)
+{
+	return;
+}
+
 function addFish(constraint, size, deviation, fill)
 {
 	return;
