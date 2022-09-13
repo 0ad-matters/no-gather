@@ -24,13 +24,19 @@ function PreInitGame()
 	for (let i = 1; i < numPlayers; ++i) // ignore gaia
 	{
 		let cmpTechnologyManager = QueryPlayerIDInterface(i, IID_TechnologyManager);
-		if (cmpTechnologyManager)
-			cmpTechnologyManager.UpdateAutoResearch();
+		if (!cmpTechnologyManager)
+			continue;
+
+		cmpTechnologyManager.UpdateAutoResearch();
 
 		// no-gather mod
 		let cmpPlayer = QueryPlayerIDInterface(i);
 		const civ = QueryPlayerIDInterface(i, IID_Identity).GetCiv();
 		cmpPlayer.SetDisabledTemplates(disabledTemplates(civ));
+		if (civ == "kush")
+			cmpPlayer.AddDisabledTemplate("structures/kush/pyramid_small");
+
+		cmpPlayer.SetDisabledTechnologies(["unlock_shared_dropsites", "unlock_females_house", "health_females_01"]);
 		//
 	}
 
