@@ -19,12 +19,15 @@ jobs:
         zip -r ${HOME}/${MOD_NAME}-${MOD_VERSION}.zip . -x .git\*
         mv ${HOME}/${MOD_NAME}*.zip $PWD
         cp ${MOD_NAME}-${MOD_VERSION}.zip ${MOD_NAME}-${MOD_VERSION}.pyromod
+        echo "Generating sha1sum..."
+        sha256sum ${MOD_NAME}-${MOD_VERSION}.zip > ${MOD_NAME}-${MOD_VERSION}.zip.sha256sum
+        sha256sum ${MOD_NAME}-${MOD_VERSION}.pyromod > ${MOD_NAME}-${MOD_VERSION}.pyromod.sha256sum
     - name: Release PyroMod
       uses: ncipollo/release-action@v1
       with:
         allowUpdates: True
         prerelease: False
-        artifacts: "no-gather*.*"
+        artifacts: "${{ env.MOD_NAME }}*.*"
         token: ${{ secrets.GITHUB_TOKEN }}
         omitNameDuringUpdate: True
         omitBodyDuringUpdate: True
