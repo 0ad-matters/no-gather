@@ -1,6 +1,10 @@
+2022-09-13
+  * release v0.26.5
+
 2022-09-09
 
   * reduce the amounts of trees, food, metal and stone on random maps
+  * significantly reduce stone and metal trickle
 
 2022-09-08
 
@@ -9,7 +13,6 @@
   * release v0.26.3
   * resource rate increases with town and city phase upgrade
   * release v0.26.4
-  * reduce stone and metal trickle by 50%
 
 2022-09-07
 
