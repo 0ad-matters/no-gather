@@ -1,4 +1,4 @@
-const treeReductionMultiplier = 0.3;
+var treeReductionMultiplier = 0.3;
 
 /**
  * Create huntable animals.
