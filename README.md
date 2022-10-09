@@ -1,8 +1,7 @@
 # no-gather
 
-Resources accumulate over time, women are champions, and on random
-maps players start with about 50 infantry. Town and city phase
-upgrades are fast and free.
+Resources accumulate over time and women are champions. Town and city
+phase upgrades are fast and free.
 
 (a mod for [0ad](https://play0ad.com/))
 

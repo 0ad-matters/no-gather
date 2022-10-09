@@ -38,10 +38,6 @@ function placeStartingEntities(location, playerID, civEntities, dist = 6, orient
 	{
 		let angle = orientation - Math.PI * (1 - j / 2);
 		let count = civEntities[j].Count || 1;
-		// no-gather mod
-		if (count == 2)
-			count *= 12 // multiply only the 2 ranged and 2 non-ranged infantry
-		//
 
 		for (let num = 0; num < count; ++num)
 		{
