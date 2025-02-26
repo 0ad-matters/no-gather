@@ -3,7 +3,7 @@
   <Attack>
     <Capture>
       <AttackName>Capture</AttackName>
-      <Capture>2.5</Capture>
+      <Capture>1.75</Capture>
       <MaxRange>4</MaxRange>
       <RepeatTime>1000</RepeatTime>
       <RestrictedClasses datatype="tokens">Field Palisade Wall</RestrictedClasses>
@@ -14,6 +14,7 @@
         <Hack>1000</Hack>
       </Damage>
       <MaxRange>2</MaxRange>
+      <PrepareTime>900</PrepareTime>
       <RepeatTime>1000</RepeatTime>
       <RestrictedClasses datatype="tokens">!Domestic</RestrictedClasses>
     </Slaughter>
@@ -50,7 +51,7 @@
   <Resistance>
     <Entity>
       <Damage>
-        <Hack>3</Hack>
+        <Hack>2</Hack>
         <Pierce>1</Pierce>
         <Crush>15</Crush>
       </Damage>

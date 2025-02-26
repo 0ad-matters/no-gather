@@ -10,6 +10,8 @@
       <PrepareTime>400</PrepareTime>
       <RepeatTime>800</RepeatTime>
       <PreferredClasses datatype="tokens">Unit+!Ship</PreferredClasses>
+      <PrepareTime>500</PrepareTime>
+      <RepeatTime>1000</RepeatTime>
     </Melee>
     <Slaughter>
       <AttackName>Slaughter</AttackName>
@@ -22,6 +24,7 @@
     </Slaughter>
   </Attack>
   <Cost>
+    <BuildTime>8</BuildTime>
     <Resources>
       <food op="add">20</food>
     </Resources>
@@ -57,4 +60,7 @@
     <CanPatrol>false</CanPatrol>
     <Formations disable=""/>
   </UnitAI>
+  <Vision>
+    <Range>32</Range>
+  </Vision>
 </Entity>
