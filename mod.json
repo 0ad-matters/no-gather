@@ -1,10 +1,10 @@
 {
 	"name": "no-gather",
-	"version": "0.26.6",
+	"version": "0.27.0555",
 	"label": "No Gather",
 	"description": "Resources acumulate over time, women are champions, and on random maps players start with about 50 infantry. Town and city phase upgrades are fast and free.",
 	"dependencies": [
-		"0ad=0.0.26"
+		"0ad=0.27.0"
 	],
 	"url": "https://github.com/0ad-matters/no-gather",
 	"author_name": ["Andy Alt", "livv"],
