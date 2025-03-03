@@ -25,7 +25,9 @@ function PreInitGame()
 	{
 		let cmpTechnologyManager = QueryPlayerIDInterface(i, IID_TechnologyManager);
 		if (!cmpTechnologyManager)
-			cmpTechnologyManager.UpdateAutoResearch();
+			continue;
+
+		cmpTechnologyManager.UpdateAutoResearch();
 
 		// no-gather mod
 		let cmpPlayer = QueryPlayerIDInterface(i);
@@ -66,23 +68,30 @@ function InitGame(settings)
 	let rate = [ 0.42, 0.56, 0.75, 1.00, 1.25, 1.56 ];
 	let time = [ 1.40, 1.25, 1.10, 1.00, 1.00, 1.00 ];
 	let cmpModifiersManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_ModifiersManager);
-	const cmpAIManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_AIManager);
+	let cmpAIManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_AIManager);
 	for (let i = 0; i < settings.PlayerData.length; ++i)
 	{
-		const cmpPlayer = QueryPlayerIDInterface(i);
+		let cmpPlayer = QueryPlayerIDInterface(i);
 		cmpPlayer.SetCheatsEnabled(!!settings.CheatsEnabled);
 
 		if (settings.PlayerData[i] && !!settings.PlayerData[i].AI)
 		{
-			cmpAIManager.AddPlayer(settings.PlayerData[i].AI, i, +settings.PlayerData[i].AIDiff, settings.PlayerData[i].AIBehavior || "random");
+			let AIDiff = +settings.PlayerData[i].AIDiff;
+			cmpAIManager.AddPlayer(settings.PlayerData[i].AI, i, AIDiff, settings.PlayerData[i].AIBehavior || "random");
 			cmpPlayer.SetAI(true);
+			AIDiff = Math.min(AIDiff, rate.length - 1);
+			cmpModifiersManager.AddModifiers("AI Bonus", {
+				"ResourceGatherer/BaseSpeed": [{ "affects": ["Unit", "Structure"], "multiply": rate[AIDiff] }],
+				"Trader/GainMultiplier": [{ "affects": ["Unit", "Structure"], "multiply": rate[AIDiff] }],
+				"Cost/BuildTime": [{ "affects": ["Unit", "Structure"], "multiply": time[AIDiff] }],
+			}, cmpPlayer.entity);
 		}
 
 		if (settings.PopulationCap)
 			cmpPlayer.SetMaxPopulation(settings.PopulationCap);
 
 		if (settings.AllyView)
-			Engine.QueryInterface(cmpPlayer.entity, IID_TechnologyManager)?.ResearchTechnology(Engine.QueryInterface(cmpPlayer.entity, IID_Diplomacy).template.SharedLosTech);
+			Engine.QueryInterface(cmpPlayer.entity, IID_TechnologyManager)?.ResearchTechnology(cmpPlayer.template.SharedLosTech);
 	}
 	if (settings.WorldPopulationCap)
 		Engine.QueryInterface(SYSTEM_ENTITY, IID_PlayerManager).SetMaxWorldPopulation(settings.WorldPopulationCap);
