@@ -35,7 +35,7 @@
 		{ "value": "ResourceTrickle/Rates/food", "multiply": 1.5 },
 		{ "value": "ResourceTrickle/Rates/wood", "multiply": 1.5 },
 		{ "value": "ResourceTrickle/Rates/stone", "multiply": 1.5 },
-		{ "value": "ResourceTrickle/Rates/metal", "multiply": 1.5 }
+		{ "value": "ResourceTrickle/Rates/metal", "multiply": 1.5 },
 		{ "value": "Capturable/GarrisonRegenRate", "add": 1, "affects": "Structure" },
 		{ "value": "Attack/Ranged/Damage/Pierce", "multiply": 1.2, "affects": "Structure" },
 		{ "value": "TerritoryInfluence/Radius", "multiply": 1.25, "affects": "CivCentre" }
